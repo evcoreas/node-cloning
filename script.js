@@ -1,8 +1,8 @@
 const AREA = document.body;
 const CIRCLE = document.querySelector('.circle');
 // Line 4 is the second circle which moves away from the mouse
-const NEWCIRCLE = document.querySelector('.new-circle');
-const CLONECIRCLE = document.querySelector('.in-circle');
+const newCircle = document.querySelector('.new-circle');
+const cloneCircle = document.querySelector('.in-circle');
 
 var windowWidth = window.innerWidth;
 var windowHeight = window.innerHeight;
@@ -25,8 +25,8 @@ function newMouseCoordinates(e) {
   var horPosRev = windowWidth - e.clientX + randomNumber;
   var vertPosRev = windowHeight - e.clientY + randomNumber;
 
-  CLONECIRCLE.style.right = horPosRev + 'px';
-  CLONECIRCLE.style.top = vertPosRev + 'px';
+  cloneCircle.style.right = horPosRev + 'px';
+  cloneCircle.style.top = vertPosRev + 'px';
   console.log("The newMouseCoordinates function is being executed");
 }
 
@@ -36,14 +36,14 @@ function changeColorOnHover() {
 }
 
 function newChangeHover() {
-  CLONECIRCLE.style.backgroundColor = "pink";
-  CLONECIRCLE.style.borderColor = "blue";
+  cloneCircle.style.backgroundColor = "pink";
+  cloneCircle.CIRCLE.style.borderColor = "blue";
 }
 
 function cloneOnClick() {
   //Using cloneNode
   const COPY = CIRCLE.querySelector('.in-circle').cloneNode(true);
-  NEWCIRCLE.appendChild(COPY);
+  newCircle.appendChild(COPY);
   console.log("The copy is being executed");
 }
 
@@ -62,4 +62,4 @@ CIRCLE.addEventListener('click', cloneOnClick, false);
 
 // When the mouse leaves the circle, remove inline styles with an anonymous function.
 CIRCLE.addEventListener('mouseleave', function(){CIRCLE.removeAttribute("style");}, false);
-CLONECIRCLE.addEventListener('mouseleave', function(){CLONECIRCLE.removeAttribute("style");}, false);
+cloneCircle.addEventListener('mouseleave', function(){cloneCircle.removeAttribute("style");}, false);
