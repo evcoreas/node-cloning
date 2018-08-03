@@ -31,13 +31,13 @@ function newMouseCoordinates(e) {
 }
 
 function changeColorOnHover() {
-    CIRCLE.style.backgroundColor = "pink";
+    CIRCLE.style.backgroundColor = "black";
     CIRCLE.style.borderColor = "purple";
 }
 
-function newChangeHover() {
-  cloneCircle.style.backgroundColor = "pink";
-  cloneCircle.CIRCLE.style.borderColor = "blue";
+function newCircleStyle() {
+  cloneCircle.style.backgroundColor = "white";
+  cloneCircle.style.border = "3px solid pink";
 }
 
 function cloneOnClick() {
@@ -54,8 +54,10 @@ AREA.addEventListener('mousemove', newMouseCoordinates, false);
 // When the mouse hovers the circle, run the changeColorOnHover function.
 CIRCLE.addEventListener('mouseenter', changeColorOnHover, false);
 
-//line 59 when clicked logs in console but does not copy
+//line 59 when clicked logs in console and copies
 CIRCLE.addEventListener('click', cloneOnClick, false);
+cloneCircle.addEventListener('mousemove', newCircleStyle, false);
+
 
 // CLONECLICK.addEventListener('click', cloneOnClick, false);
 // NEWCIRCLE.addEventListener('mouseenter', newChangeHover, false);
